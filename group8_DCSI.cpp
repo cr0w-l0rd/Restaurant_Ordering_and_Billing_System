@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <limits>
 #include <cctype>
+
 using namespace std;
 
 bool isAllDigits(const string &s)
