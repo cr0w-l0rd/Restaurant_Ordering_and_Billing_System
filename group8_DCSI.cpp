@@ -83,7 +83,7 @@ int main(void)
 	cout << "5. Family Pizza Set (RM45)              [ 10% |  8% | 6% ]\n";
 	cout << "6. Dessert & Beverage Combo (RM14)      [ 12% | 10% | 7% ]\n";
 
-	// ORDER LOOP (while only)
+	// ORDER LOOP
 	while (more == 'Y' || more == 'y')
 	{
 		if (orderCount >= 20)
