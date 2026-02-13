@@ -1,6 +1,6 @@
 # Restaurant Ordering & Billing System
 
-*This project has been created as part of our group assignment under the Diploma in Computer Science syllabus at SCKL by Koo Yan Rong, Low Pey Ern and May Elisa Biusing.*
+*This project has been created as part of our Semester 1 group assignment under the Diploma in Computer Science syllabus at SCKL by Koo Yan Rong, Low Pey Ern and May Elisa Biusing.*
 
 ## Description
 
