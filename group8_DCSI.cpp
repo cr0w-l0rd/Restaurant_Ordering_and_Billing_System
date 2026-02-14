@@ -19,18 +19,15 @@ bool isAllDigits(const string &s)
 
 int main(void)
 {
-	// Customer Information
 	string name, ic_passport;
 	int age;
 	char member, student;
 
-	// Storing Order
 	string orderName[20], orderDiscount[20];
 	int orderQty[20], orderCount = 0;
 	double orderFinal[20], grandTotal = 0;
 	char more = 'Y';
 
-	// Input Customer Name
 	cout << "Enter Customer Name: ";
 	getline(cin, name);
 	while (name.empty())
@@ -39,7 +36,6 @@ int main(void)
 		getline(cin, name);
 	}
 
-	// IC/Passport input (exactly 12 digits)
 	cout << "Enter IC/Passport (12 digits): ";
 	cin >> ic_passport;
 	while (ic_passport.length() != 12 || !isAllDigits(ic_passport))
@@ -48,7 +44,6 @@ int main(void)
 		cin >> ic_passport;
 	}
 
-	// Age input
 	cout << "Enter Age (1-150): ";
 	while (!(cin >> age) || age < 1 || age > 150)
 	{
@@ -57,7 +52,6 @@ int main(void)
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	}
 
-	// Member check
 	cout << "Member? (Y/N): ";
 	cin >> member;
 	while (member!='Y' && member!='y' && member!='N' && member!='n')
@@ -66,7 +60,6 @@ int main(void)
 		cin >> member;
 	}
 
-	// Student check
 	cout << "Student? (Y/N): ";
 	cin >> student;
 	while (student!='Y' && student!='y' && student!='N' && student!='n')
@@ -75,7 +68,6 @@ int main(void)
 		cin >> student;
 	}
 
-	// Menu
 	cout << "\nMENU                     (Discounts: Member | Student | Senior (60+))\n";
 	cout << "1. Grilled Chicken Set (RM18)           [ 10% | 15% | 5% ]\n";
 	cout << "2. Beef Burger Combo (RM22)             [ 12% | 10% | 5% ]\n";
@@ -84,7 +76,6 @@ int main(void)
 	cout << "5. Family Pizza Set (RM45)              [ 10% |  8% | 6% ]\n";
 	cout << "6. Dessert & Beverage Combo (RM14)      [ 12% | 10% | 7% ]\n";
 
-	// ORDER LOOP
 	while (more == 'Y' || more == 'y')
 	{
 		if (orderCount >= 20)
@@ -94,7 +85,6 @@ int main(void)
 		string itemName;
 		double price=0, memberDisc=0, studentDisc=0, seniorDisc=0;
 
-		// Item code
 		cout << "\nEnter Item Code (1-6): ";
 		while (!(cin >> code) || code < 1 || code > 6)
 		{
@@ -103,7 +93,6 @@ int main(void)
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
 
-		// Switch menu
 		switch(code)
 		{
 			case 1: itemName="Grilled Chicken Set"; price=18;
@@ -120,7 +109,6 @@ int main(void)
 					memberDisc=12; studentDisc=10; seniorDisc=7; break;
 		}
 
-		// Quantity
 		cout << "Quantity: ";
 		while (!(cin >> qty) || qty <= 0)
 		{
@@ -129,7 +117,6 @@ int main(void)
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
 
-		// ===== Highest discount logic =====
 		bool isMember = (member=='Y'||member=='y');
 		bool isStudent = (student=='Y'||student=='y');
 		bool isSenior = (age>=60);
@@ -155,7 +142,6 @@ int main(void)
 
 		double finalPrice = price * qty * (1 - bestDiscount/100.0);
 
-		// Store
 		orderName[orderCount]=itemName;
 		orderQty[orderCount]=qty;
 		orderFinal[orderCount]=finalPrice;
@@ -168,7 +154,6 @@ int main(void)
 		grandTotal+=finalPrice;
 		orderCount++;
 
-		// Continue?
 		cout	<<	"Add another item? (Y/N): ";
 		cin		>>	more;
 		while (more != 'Y' && more != 'y' && more != 'N' && more != 'n' )
@@ -178,7 +163,6 @@ int main(void)
 		}
 	}
 
-	// ===== RECEIPT =====
 	cout << "\n=========== RECEIPT ===========\n";
 	cout << "Name: " << name << endl;
 	cout << "IC/Passport: " << ic_passport << endl;
