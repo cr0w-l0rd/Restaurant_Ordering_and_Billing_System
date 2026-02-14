@@ -36,12 +36,12 @@ int main(void)
 		getline(cin, name);
 	}
 
-	cout << "Enter IC/Passport (12 digits): ";
-	cin >> ic_passport;
+	cout	<< "Enter IC/Passport (12 digits): ";
+	cin		>> ic_passport;
 	while (ic_passport.length() != 12 || !isAllDigits(ic_passport))
 	{
-		cout << "Invalid IC/Passport. Must be exactly 12 digits: ";
-		cin >> ic_passport;
+		cout	<< "Invalid IC/Passport. Must be exactly 12 digits: ";
+		cin		>> ic_passport;
 	}
 
 	cout << "Enter Age (1-150): ";
@@ -83,7 +83,7 @@ int main(void)
 
 		int code, qty;
 		string itemName;
-		double price=0, memberDisc=0, studentDisc=0, seniorDisc=0;
+		double price = 0, memberDisc = 0, studentDisc = 0, seniorDisc = 0;
 
 		cout << "\nEnter Item Code (1-6): ";
 		while (!(cin >> code) || code < 1 || code > 6)
@@ -117,9 +117,9 @@ int main(void)
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
 
-		bool isMember = (member=='Y'||member=='y');
-		bool isStudent = (student=='Y'||student=='y');
-		bool isSenior = (age>=60);
+		bool isMember	= (member=='Y'||member=='y');
+		bool isStudent	= (student=='Y'||student=='y');
+		bool isSenior	= (age>=60);
 
 		double bestDiscount = 0;
 		string bestType = "None";
