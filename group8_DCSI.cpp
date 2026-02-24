@@ -204,12 +204,12 @@ int main(void)
 
 		/*	Store discount label for receipt display. */
 		if (bestDiscount>0)
-			orderDiscount[orderCount]=bestType+"("+to_string((int)bestDiscount)+"%)";
+			orderDiscount[orderCount]=bestType + "(" + to_string((int)bestDiscount) + "%)";
 		else
 			orderDiscount[orderCount]="None(0%)";
 
 		/*	Update grand total and move to next slot in the array. */
-		grandTotal+=finalPrice;
+		grandTotal += finalPrice;
 		orderCount++;
 
 		/*	Ask if user wants to add another item.
