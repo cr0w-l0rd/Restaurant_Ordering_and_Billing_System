@@ -48,7 +48,7 @@ int main(void)
 
 	if (idType == "IC" || idType == "ic")
 	{
-		while (ic_passport.length() != 12)
+		while (ic_passport.length() != 12 || ic_passport.empty())
 		{
 			cout << "Invalid IC. Must be exactly 12 characters. Enter again: ";
 			cin >> ic_passport;
