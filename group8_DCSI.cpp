@@ -16,7 +16,7 @@ int main(void)
 	string orderName[20], orderDiscount[20];
 	int orderQty[20], orderCount = 0;
 	double orderFinal[20], grandTotal = 0;
-	char more = 'Y';
+	char addAnotherItem = 'Y';
 
 	/*	Input: Customer Name
 		- Uses getline so the user can enter spaces (ex : "Pey May Yan").
@@ -115,7 +115,7 @@ int main(void)
 		Stops when:
 		- user says 'N' or 'n'
 		- array limit (20 orders) is reached */
-	while (more == 'Y' || more == 'y')
+	while (addAnotherItem == 'Y' || addAnotherItem == 'y')
 	{
 		if (orderCount >= 20) // Prevents writing past the array size (0-19).
 			break;
@@ -215,11 +215,11 @@ int main(void)
 		/*	Ask if user wants to add another item.
 			Validate Y/y/N/n. */
 		cout	<<	"Add another item? (Y/N): ";
-		cin		>>	more;
-		while (more != 'Y' && more != 'y' && more != 'N' && more != 'n' )
+		cin		>>	addAnotherItem;
+		while (addAnotherItem != 'Y' && addAnotherItem != 'y' && addAnotherItem != 'N' && addAnotherItem != 'n' )
 		{
 			cout	<<	"Invalid. Enter Y or N: ";
-			cin		>>	more;
+			cin		>>	addAnotherItem;
 		}
 	}
 
