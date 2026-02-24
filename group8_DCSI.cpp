@@ -51,8 +51,8 @@ int main(void)
 	while (!(cin >> age) || age < 1 || age > 150)
 	{
 		cout << "Invalid age. Enter 1-150: ";
-		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.clear(); // Clears error flags on the cin stream
+		cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clears input buffer
 	}
 
 	/*	Input: Member status (Y/N)
@@ -108,8 +108,8 @@ int main(void)
 		while (!(cin >> code) || code < 1 || code > 6)
 		{
 			cout << "Invalid code. Enter 1-6: ";
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin.clear(); // Clears error flags on the cin stream
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clears input buffer
 		}
 
 		/*	Set item details based on code:
@@ -138,8 +138,8 @@ int main(void)
 		while (!(cin >> qty) || qty <= 0)
 		{
 			cout << "Invalid quantity. Enter again: ";
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin.clear(); // Clears error flags on the cin stream
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clears input buffer
 		}
 
 		/*	Convert customer details into boolean flags.
@@ -206,13 +206,13 @@ int main(void)
 	cout << "Name: " << name << endl;
 	cout << "IC/Passport: " << ic_passport << endl;
 
-	// Receipt table header
+	/*	Receipt table header */
 	cout << left << setw(28) << "\nItem"
 		 << setw(6) << "Qty"
 		 << setw(18) << "Discount"
 		 << "Price (RM)\n";
 
-	// Print each ordered item
+	/*	Print each ordered item */
 	int i = 0;
 	while (i < orderCount)
 	{
