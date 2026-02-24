@@ -230,7 +230,7 @@ int main(void)
 	cout << left << setw(28) << "\nItem"
 		 << setw(6) << "Qty"
 		 << setw(18) << "Discount"
-		 << "Final (RM)\n";
+		 << "Price (RM)\n";
 
 	// Print each ordered item
 	int i = 0;
