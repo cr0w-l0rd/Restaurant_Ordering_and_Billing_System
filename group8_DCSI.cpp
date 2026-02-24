@@ -33,11 +33,13 @@ int main(void)
 		- Ask which one they want to enter
 		- If IC: must be exactly 12 characters
 		- If Passport: no specific requirement (just not empty) */
-	cout << "Enter IC or Passport? (IC/Passport): ";
+	cout << "Enter IC or Passport? (IC/P): ";
 	cin >> idType;
-	while (idType != "IC" && idType != "ic" && idType != "Passport" && idType != "passport")
+	while (idType != "IC" && idType != "ic" 
+			&& idType != "P" && idType != "p" 
+			&& idType != "Passport" && idType != "passport")
 	{
-		cout << "Invalid. Type IC or Passport: ";
+		cout << "Invalid. Type (IC/ic) or (P/p/Passport/passport): ";
 		cin >> idType;
 	}
 
