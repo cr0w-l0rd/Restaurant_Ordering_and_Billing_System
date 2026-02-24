@@ -8,7 +8,7 @@ int main(void)
 {
 	
 	/*	CUSTOMER INFORMATION */
-	string name, ic_passport;
+	string name, ic_passport, idType;
 	int age;
 	char member, student;
 	
@@ -33,8 +33,6 @@ int main(void)
 		- Ask which one they want to enter
 		- If IC: must be exactly 12 characters
 		- If Passport: no specific requirement (just not empty) */
-	string idType;
-
 	cout << "Enter IC or Passport? (IC/Passport): ";
 	cin >> idType;
 	while (idType != "IC" && idType != "ic" && idType != "Passport" && idType != "passport")
