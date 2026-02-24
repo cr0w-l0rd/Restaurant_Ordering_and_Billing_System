@@ -29,15 +29,38 @@ int main(void)
 		getline(cin, name);
 	}
 
-	/*	Input: IC/Passport
-		- Uses cin which reads a single "word" / argument.
-		- Loop prevents empty input. */
-	cout	<< "Enter IC/Passport: ";
-	cin		>> ic_passport;
-	while (ic_passport.empty())
+	/*	Input: IC or Passport (user chooses)
+		- Ask which one they want to enter
+		- If IC: must be exactly 12 characters
+		- If Passport: no specific requirement (just not empty) */
+	string idType;
+
+	cout << "Enter IC or Passport? (IC/Passport): ";
+	cin >> idType;
+	while (idType != "IC" && idType != "ic" && idType != "Passport" && idType != "passport")
 	{
-		cout	<< "IC/Passport cannot be empty. Enter again: ";
-		cin		>> ic_passport;
+		cout << "Invalid. Type IC or Passport: ";
+		cin >> idType;
+	}
+
+	cout << "Enter " << ((idType == "IC" || idType == "ic") ? "IC (12 digits)" : "Passport") << ": ";
+	cin >> ic_passport;
+
+	if (idType == "IC" || idType == "ic")
+	{
+		while (ic_passport.length() != 12)
+		{
+			cout << "Invalid IC. Must be exactly 12 characters. Enter again: ";
+			cin >> ic_passport;
+		}
+	}
+	else
+	{
+		while (ic_passport.empty())
+		{
+			cout << "Passport cannot be empty. Enter again: ";
+			cin >> ic_passport;
+		}
 	}
 	
 	/*	Input: Age (1 - 150)
@@ -204,7 +227,7 @@ int main(void)
 		- Prints all saved orders (0 to orderCount-1) and the grand total. */
 	cout << "\n=========== RECEIPT ===========\n";
 	cout << "Name: " << name << endl;
-	cout << "IC/Passport: " << ic_passport << endl;
+	cout << ((idType == "IC" || idType == "ic") ? "IC: " : "Passport: ") << ic_passport << endl;
 
 	/*	Receipt table header */
 	cout << left << setw(28) << "\nItem"
