@@ -1,21 +1,8 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
-#include <cctype>
 
 using namespace std;
-
-bool isAllDigits(const string &s)
-{
-	int i = 0;
-	while (i < s.length())
-	{
-		if (!isdigit(s[i]))
-			return (false);
-		i++;
-	}
-	return (true);
-}
 
 int main(void)
 {
@@ -38,7 +25,7 @@ int main(void)
 
 	cout	<< "Enter IC/Passport (12 digits): ";
 	cin		>> ic_passport;
-	while (ic_passport.length() != 12 || !isAllDigits(ic_passport))
+	while (ic_passport.length() != 12)
 	{
 		cout	<< "Invalid IC/Passport. Must be exactly 12 digits: ";
 		cin		>> ic_passport;
