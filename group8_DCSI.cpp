@@ -23,11 +23,11 @@ int main(void)
 		getline(cin, name);
 	}
 
-	cout	<< "Enter IC/Passport (12 digits): ";
+	cout	<< "Enter IC/Passport: ";
 	cin		>> ic_passport;
-	while (ic_passport.length() != 12)
+	while (ic_passport.empty())
 	{
-		cout	<< "Invalid IC/Passport. Must be exactly 12 digits: ";
+		cout	<< "IC/Passport cannot be empty. Enter again: ";
 		cin		>> ic_passport;
 	}
 
