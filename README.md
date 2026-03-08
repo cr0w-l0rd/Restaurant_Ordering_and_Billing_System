@@ -4,4 +4,4 @@
 
 ## Description
 
-Sunway Culinary Fest 2026 is organizing a Food & Restaurant Promotion Event, featuring multiple partner restaurants offering signature meals, combo sets, and beverages. Your team has been hired to develop a Restaurant Ordering & Billing System that allows customers to place food orders, apply applicable discounts, and generate a final billing summary. The system should support multiple orders per customer and apply discounts based on customer eligibility and the promotion period.
+[Redacted] Culinary Fest 2026 is organizing a Food & Restaurant Promotion Event, featuring multiple partner restaurants offering signature meals, combo sets, and beverages. Your team has been hired to develop a Restaurant Ordering & Billing System that allows customers to place food orders, apply applicable discounts, and generate a final billing summary. The system should support multiple orders per customer and apply discounts based on customer eligibility and the promotion period.
